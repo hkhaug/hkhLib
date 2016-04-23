@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("hkhLib")]
-[assembly: AssemblyDescription("A library of more or less useful code")]
+[assembly: AssemblyTitle("TestCoreLib")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("hkhLib")]
-[assembly: AssemblyCopyright("Copyright © 2016 Hans Kristian Haug")]
+[assembly: AssemblyProduct("TestCoreLib")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("caf89113-16b2-4886-b76f-1e77d9a7a6e3")]
+[assembly: Guid("f7a0d5a3-dc79-497a-a172-77aef8c1050f")]
 
 // Version information for an assembly consists of the following four values:
 //
