@@ -51,7 +51,7 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0202_IfMissing_WasEmpty_SetToPassedValue()
+        public void T0202_IfMissingReplaceWith_WasEmpty_SetToPassedValue()
         {
             string destination = string.Empty;
             string result = destination.IfMissingReplaceWith("New value");
@@ -59,7 +59,7 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0203_IfMissing_WasWhitespaceOnly_SetToPassedValue()
+        public void T0203_IfMissingReplaceWith_WasWhitespaceOnly_SetToPassedValue()
         {
             const string destination = " \t\r\n";
             string result = destination.IfMissingReplaceWith("New value");
@@ -67,7 +67,7 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0204_IfMissing_WasNotEmpty_KeepsOriginalValue()
+        public void T0204_IfMissingReplaceWith_WasNotEmpty_KeepsOriginalValue()
         {
             const string destination = "Original value";
             string result = destination.IfMissingReplaceWith("New value");
@@ -75,7 +75,87 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0301_SplitIntoChunks_Empty_ReturnsZeroChunks()
+        public void T0301_Left_WasNull_ReturnsEmpty()
+        {
+            string destination = null;
+            string result = destination.Left(10);
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [TestMethod]
+        public void T0302_Left_WasEmpty_ReturnsEmpty()
+        {
+            string destination = string.Empty;
+            string result = destination.Left(10);
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [TestMethod]
+        public void T0303_Left_WasShorter_ReturnsIdentical()
+        {
+            string destination = "abcde";
+            string result = destination.Left(10);
+            Assert.AreEqual(destination, result);
+        }
+
+        [TestMethod]
+        public void T0304_Left_WasRequestedLength_ReturnsIdentical()
+        {
+            string destination = "abcde";
+            string result = destination.Left(5);
+            Assert.AreEqual(destination, result);
+        }
+
+        [TestMethod]
+        public void T0305_Left_WasLonger_ReturnsOnlyLeftPartWithRequestedLength()
+        {
+            string destination = "abcde";
+            string result = destination.Left(3);
+            Assert.AreEqual("abc", result);
+        }
+
+        [TestMethod]
+        public void T0401_Right_WasNull_ReturnsEmpty()
+        {
+            string destination = null;
+            string result = destination.Right(10);
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [TestMethod]
+        public void T0402_Right_WasEmpty_ReturnsEmpty()
+        {
+            string destination = string.Empty;
+            string result = destination.Right(10);
+            Assert.AreEqual(string.Empty, result);
+        }
+
+        [TestMethod]
+        public void T0403_Right_WasShorter_ReturnsIdentical()
+        {
+            string destination = "abcde";
+            string result = destination.Right(10);
+            Assert.AreEqual(destination, result);
+        }
+
+        [TestMethod]
+        public void T0404_Right_WasRequestedLength_ReturnsIdentical()
+        {
+            string destination = "abcde";
+            string result = destination.Right(5);
+            Assert.AreEqual(destination, result);
+        }
+
+        [TestMethod]
+        public void T0405_Right_WasLonger_ReturnsOnlyRightPartWithRequestedLength()
+        {
+            string destination = "abcde";
+            string result = destination.Right(3);
+            Assert.AreEqual("cde", result);
+        }
+
+        [TestMethod]
+        public void T0501_SplitIntoChunks_Empty_ReturnsZeroChunks()
         {
             TestSplitIntoChunks_Empty_ReturnsZeroChunks(1);
             TestSplitIntoChunks_Empty_ReturnsZeroChunks(100);
@@ -90,7 +170,7 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0302_SplitIntoChunks_LengthMatchFullChunks()
+        public void T0502_SplitIntoChunks_LengthMatchFullChunks()
         {
             TestSplitIntoChunks_LengthMatchFullChunks(1);
             TestSplitIntoChunks_LengthMatchFullChunks(5);
@@ -108,7 +188,7 @@ namespace TestCoreLib
         }
 
         [TestMethod]
-        public void T0303_SplitIntoChunks_LengthMeansLastChunkIsShorter()
+        public void T0503_SplitIntoChunks_LengthMeansLastChunkIsShorter()
         {
             TestSplitIntoChunks_LengthMeansLastChunkIsShorter(2);
             TestSplitIntoChunks_LengthMeansLastChunkIsShorter(5);

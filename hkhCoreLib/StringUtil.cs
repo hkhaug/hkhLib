@@ -31,6 +31,28 @@ namespace hkhCoreLib
         }
 
         /// <summary>
+        /// Extract the leftmost part of a string.
+        /// </summary>
+        /// <param name="length">The maximum length of the returned string.</param>
+        /// <returns>The leftmost part of the source string.</returns>
+        public static string Left(this string s, int length)
+        {
+            if (null == s) return string.Empty;
+            return s.Length > length ? s.Substring(0, length) : s;
+        }
+
+        /// <summary>
+        /// Extract the rightmost part of a string.
+        /// </summary>
+        /// <param name="length">The maximum length of the returned string.</param>
+        /// <returns>The rightmost part of the source string.</returns>
+        public static string Right(this string s, int length)
+        {
+            if (null == s) return string.Empty;
+            return s.Length > length ? s.Substring(s.Length - length) : s;
+        }
+
+        /// <summary>
         /// Split a long string into chunks of specified length.
         /// </summary>
         /// <param name="input">The long string to be split.</param>
